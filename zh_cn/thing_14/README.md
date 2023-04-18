@@ -1,15 +1,15 @@
-# Code Reviews
+# 代码审查
 
-You should do code reviews. Why? Because they *increase code quality* and *reduce defect rate*. But not necessarily for the reasons you might think.
+你应该进行代码审查。为什么？因为它们可以*提高代码质量*并*减少缺陷率*。但可能并不是你所想的原因。
 
-Because they may previously have had some bad experiences with reviews, many programmers tend to dislike code reviews. I have seen organizations that require that all code pass a formal review before being deployed to production. Often it is the architect or a lead developer doing this review, a practice that can be described as *architect reviews everything*. This is stated in their software development process manual, so therefore the programmers must comply. There may be some organizations that need such a rigid and formal process, but most do not. In most organizations such an approach is counterproductive. Reviewees can feel like they are being judged by a parole board. Reviewers need both the time to read the code and the time to keep up to date with all the details of the system. The reviewers can rapidly become the bottleneck in this process, and the process soon degenerates.
+由于之前可能有一些不好的代码审查经历，许多程序员倾向于不喜欢代码审查。我见过一些组织要求所有代码在发布到生产环境之前都必须通过正式审查。通常，这是由架构师或主要开发人员来进行审查，这种做法可以描述为*架构师审查所有内容*。这是在他们的软件开发流程手册中规定的，因此程序员必须遵守。虽然有一些组织需要这样严格和正式的流程，但大多数组织并不需要。在大多数组织中，这样的方法是适得其反的。审阅者可能会觉得自己像是被大赦委员会审判一样。审阅者需要时间来阅读代码并了解系统的所有细节。审阅者很快就会成为这个过程中的瓶颈，过程很快就会退化。
 
-Instead of simply correcting mistakes in code, the purpose of code reviews should be to *share knowledge* and establish common coding guidelines. Sharing your code with other programmers enables collective code ownership. Let a random team member *walk through the code* with the rest of the team. Instead of looking for errors you should review the code by trying to learn it and understand it.
+代码审查的目的不仅仅是纠正代码中的错误，还应该是*共享知识*并建立共同的编码准则。将你的代码与其他程序员分享可以实现集体代码拥有权。让一个随机的团队成员*浏览代码*并与团队其他成员一起浏览代码。你应该通过尝试学习和理解代码来审查代码，而不是仅仅寻找错误。
 
-Be gentle during code reviews. Ensure that comments are *constructive, not caustic*. Introduce different *review roles* for the review meeting, to avoid having organizational seniority among team members affect the code review. Examples of roles could include having one reviewer focus on documentation, another on exceptions, and a third to look at the functionality. This approach helps to spread the review burden across the team members.
+在代码审查过程中要温和。确保评论是*建设性的，而不是具有腐蚀性的*。在审查会议中引入不同的*审阅角色*，以避免组织中的资历对代码审查产生影响。审阅角色可以包括一个审阅者专注于文档、另一个专注于异常，第三个负责功能。这种方法有助于将审查工作分摊给团队成员。
 
-Have a regular *code review* day each week. Spend a couple of hours in a review meeting. Rotate the reviewee every meeting in a simple round-robin pattern. Remember to switch roles among team members every review meeting too. *Involve newbies* in code reviews. They may be inexperienced, but their fresh university knowledge can provide a different perspective. *Involve experts* for their experience and knowledge. They will identify error-prone code faster and with more accuracy. Code reviews will flow more easily if the team has *coding conventions* that are checked by tools. That way, code formatting will never be discussed during the code review meeting.
+每周有一个规则的*代码审查日*。花几个小时进行审查会议。按照简单的轮流模式每次检查不同的成员。记得每次审查会议也要在团队成员之间切换角色。让新手参加代码审查。他们可能没有经验，但他们新鲜的大学知识可以提供不同的角度。让专家参与，以获得他们的经验和知识。他们将更快地并更准确地识别容易出错的代码。如果团队拥有被工具检查的*编码惯例*，那么代码审查将更容易进行。这样，代码格式化将永远不会在代码审查会议中被讨论。
 
-*Making code reviews fun* is perhaps the most important contributor to success. Reviews are about the people reviewing. If the review meeting is painful or dull it will be hard to motivate anyone. Make it an *informal code review* whose prime purpose is sharing knowledge between team members. Leave sarcastic comments outside and bring a cake or brown bag lunch instead.
+*让代码审查变得有趣*可能是成功的最重要贡献者。审查是关于审查人员的。如果审查会议很痛苦或无聊，那么很难激励任何人。让它成为一个*非正式的代码审查*，其主要目的是在团队成员之间共享知识。不要带讽刺性的评论，相反带一块蛋糕或是自己准备午餐。
 
-by [Mattias Karlsson](http://programmer.97things.oreilly.com/wiki/index.php/Mattias_Karlsson)
+作者 [Mattias Karlsson](http://programmer.97things.oreilly.com/wiki/index.php/Mattias_Karlsson)
