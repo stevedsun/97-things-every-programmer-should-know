@@ -1,15 +1,15 @@
-# Code Layout Matters
+# 代码布局重要性
 
-An infeasible number of years ago I worked on a Cobol system where staff weren't allowed to change the indentation unless they already had a reason to change the code, because someone once broke something by letting a line slip into one of the special columns at the beginning of a line. This applied even if the layout was misleading, which it sometimes was, so we had to read the code very carefully because we couldn't trust it. The policy must have cost a fortune in programmer drag.
+很多年前，我曾在一个 Cobol 系统上工作，员工们不允许更改缩进，除非他们已经有理由更改代码，因为有人曾经让一行滑入一行的特殊列中而破坏了一些东西。即使布局具有误导性（有时候是这样），这也适用，因此我们必须非常仔细地阅读代码，因为我们无法信任它。这个政策一定花费了程序员大量的时间和精力。
 
-There's research to show that we all spend much more of our programming time navigating and reading code — finding *where* to make the change — than actually typing, so that's what we want to optimize for.
+有研究表明，我们在编程中花费的时间大部分都是在导航和阅读代码（找到修改位置），而不是实际输入，因此我们想要为其进行优化。
 
-- *Easy to scan.* People are really good at visual pattern matching (a leftover from the time when we had to spot lions on the savannah), so I can help myself by making everything that isn't directly relevant to the domain, all the "accidental complexity" that comes with most commercial languages, fade into the background by standardizing it. If code that behaves the same looks the same, then my perceptual system will help me pick out the differences. That's why I also observe conventions about how to lay out the parts of a class within a compilation unit: constants, fields, public methods, private methods.
+- _易于扫描_。人们在视觉模式匹配方面非常擅长（这是从我们必须在草原上发现狮子的时代遗留下来的技能），因此我可以通过标准化所有与域直接无关的“偶然复杂性”（大部分商业语言都伴随着这种复杂性）来帮助自己。如果行为相同的代码看起来一样，那么我的感知系统将帮助我分辨出差异。这就是为什么我还遵循一些有关编译单元中类的部分如何排列的惯例：常量、字段、公共方法、私有方法。
 
-- *Expressive layout.* We've all learned to take the time to find the right names so that our code expresses as clearly as possible what it does, rather than just listing the steps — right? The code's layout is part of this expressiveness too. A first cut is to have the team agree on an automatic formatter for the basics, then I might make adjustments by hand while I'm coding. Unless there's active dissension, a team will quickly converge on a common "hand-finished" style. A formatter cannot understand my intentions (I should know, I once wrote one), and it's more important to me that the line breaks and groupings reflect the intention of the code, not just the syntax of the language. (Kevin McGuire freed me from my bondage to automatic code formatters.)
+- _表达布局_。我们都学会了花时间寻找正确的名称，以便我们的代码清楚地表达它所做的事情，而不仅仅是列出步骤，对吗？代码的布局也是这种表现力的一部分。首先，团队可以就基础设置自动格式化器达成一致，然后我在编码时可能会手动调整。除非存在积极的分歧，否则团队将迅速趋于一种共同的“手工完成”样式。格式化器无法理解我的意图（我应该知道，我曾经写过一个），对我来说，重要的是线路的断点和分组反映了代码的意图，而不仅仅是语言的语法。（Kevin McGuire 让我从自动代码格式化器的束缚中解脱出来。）
 
-- *Compact format.* The more I can get on a screen, the more I can see without breaking context by scrolling or switching files, which means I can keep less state in my head. Long procedure comments and lots of whitespace made sense for 8-character names and line printers, but now I live in an IDE that does syntax coloring and cross linking. Pixels are my limiting factor so I want every one to contribute towards my understanding of the code. I want the layout to help me understand the code, but no more than that.
+- _紧凑格式_。我能放到屏幕上的信息越多，我就越能在不打断上下文的情况下看到更多信息，这意味着我可以在头脑中保留更少的状态。长的函数注释和大量空白对于 8 个字符的名称和行打印机是有意义的，但现在我生活在一个支持语法颜色和交叉链接的 IDE 中。像素是我的限制因素，所以我希望每一个像素都能有助于我理解代码。布局应该帮助我理解代码，但也仅仅如此。
 
-A non-programmer friend once remarked that code looks like poetry. I get that feeling from really good code, that everything in the text has a purpose and that it's there to help me understand the idea. Unfortunately, writing code doesn't have the same romantic image as writing poetry.
+一个非程序员的朋友曾经评论说代码看起来像诗歌。当我看到真正优秀的代码时，我也有这种感觉，整个文本中的每个东西都有一个目的，它们存在于那里是为了帮助我理解这个想法。不幸的是，写代码并没有写诗歌那样浪漫的形象。
 
-By [Steve Freeman](http://programmer.97things.oreilly.com/wiki/index.php/Steve_Freeman)
+作者：[Steve Freeman](http://programmer.97things.oreilly.com/wiki/index.php/Steve_Freeman)
