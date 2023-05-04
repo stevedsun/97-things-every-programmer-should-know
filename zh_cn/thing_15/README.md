@@ -1,25 +1,23 @@
-# Coding with Reason
+# 以理性编程
 
-Trying to reason about software correctness by hand results in a formal proof that is longer than the code and is more likely to contain errors than the code. Automated tools are preferable, but not always possible. What follows describes a middle path: reasoning semi-formally about correctness.
+手动推理软件正确性的结果往往会得到一个比代码更长且更容易包含错误的形式证明。自动化工具是首选，但并非总是可行的。下面所述的是一种中间路径：半正式地推理正确性。
 
-The underlying approach is to divide all the code under consideration into short sections — from a single line, such as a function call, to blocks of less than ten lines — and arguing about their correctness. The arguments need only be strong enough to convince your devil's advocate peer programmer.
+本方法的基本思路是将所有待考虑的代码划分为短的部分——从单行代码，如函数调用，到少于十行的代码块，并对它们的正确性进行讨论。这些论证只需要足够有力，以能够说服你的“扮演恶魔的拥护者”同行程序员为止。
 
-A section should be chosen so that at each endpoint the *state of the program* (namely, the program counter and the values of all "living" objects) satisfies an easily described property, and that the functionality of that section (state transformation) is easy to describe as a single task — these will make reasoning simpler. Such endpoint properties generalize concepts like *precondition* and *postcondition* for functions, and *invariant* for loops and classes (with respect to their instances). Striving for sections to be as independent of one another as possible simplifies reasoning and is indispensable when these sections are to be modified.
+应该选择一个部分，使得在每个端点处，程序的*状态*（即程序计数器和所有“活着”的对象的值）满足易于描述的属性，该部分的功能（状态转换）易于描述为单个任务——这将使推理更简单。这些端点属性概括了函数的*前置条件*和*后置条件*以及循环和类（对其实例而言）的*不变量*等概念。如果这些部分需要修改，则努力使它们相互独立，这将简化推理并是不可缺少的。
 
-Many of the coding practices that are well known (although perhaps less well followed) and considered 'good' make reasoning easier. Hence, just by intending to reason about your code, you already start thinking toward a better style and structure. Unsurprisingly, most of these practices can be checked by static code analyzers:
+许多众所周知（尽管可能不太遵循）和被认为“好”的编码实践会使推理更容易。因此，仅仅因为打算推理代码，您就已经开始思考更好的样式和结构了。并且毫不奇怪地，大多数这些实践可以通过静态代码分析器来检查：
 
-- Avoid using goto statements, as they make remote sections highly interdependent.
-- Avoid using modifiable global variables, as they make all sections that use them dependent.
-- Each variable should have the smallest possible scope. For example, a local object can be declared right before its first usage.
-- Make objects *immutable* whenever relevant.
-- Make the code readable by using spacing, both horizontal and vertical. For example, aligning related structures and using an empty line to separate two sections.
-- Make the code self-documenting by choosing descriptive (but relatively short) names for objects, types, functions, etc.
-- If you need a nested section, make it a function.
-- Make your functions short and focused on a single task. The old *24-line limit* still applies. Although screen size and resolution have changed, nothing has changed in human cognition since the 1960s.
-- Functions should have few parameters (four is a good upper bound). This does not restrict the data communicated to functions: Grouping related parameters into a single object benefits from *object invariants* and saves reasoning, such as their coherence and consistency.
-- More generally, each unit of code, from a block to a library, should have a *narrow interface*. Less communication reduces the reasoning required. This means that *getters* that return internal state are a liability — don't ask an object for information to work with. Instead, ask the object to do the work with the information it already has. In other words, *encapsulation* is all — and only — about *narrow interfaces*.
-- In order to preserve class *invariants*, usage of *setters* should be discouraged, as *setters* tend to allow invariants that govern an object's state to be broken.
+- 避免使用 goto 语句，因为它们会使远程部分高度相互依赖。
+- 避免使用可修改的全局变量，因为它们会使使用它们的所有部分都相互依赖。
+- 每个变量的作用域应该尽可能小。例如，可以在其第一次使用之前声明一个局部对象。
+- 在相关情况下，使对象*不可变*。
+- 通过使用水平和垂直间距使代码易于阅读。例如，对齐相关结构并使用空行分隔两个部分。
+- 通过为对象、类型、函数等选择描述性（但相对较短）的名称来使代码自我说明。
+- 如果需要嵌套部分，则将其作为一个函数。
+- 使函数短小并专注于单个任务。旧的*24 行限制*仍然适用。尽管屏幕尺寸和分辨率已经改变，但自 20 世纪 60 年代以来，人类的认知并没有改变。
+- 函数应该具有较少的参数（四个是好的上限）。这并不限制传递给函数的数据：将相关参数分组到单个对象中有益于*对象不变量*，并减少了推理的负担，例如它们的一致性和连贯性。
+- 更普遍地说，每个代码单元，从一个块到一个库，都应该具有*窄接口*。减少通信可以减少所需的推理。这意味着返回内部状态的*getter*是一种负担——不要询问对象以获取信息以处理。相反，请求对象使用它已经拥有的信息来完成工作。换句话说，*封装*只与*窄接口*有关，而且仅与*窄接口*有关。
+- 为了保持类*不变量*，应该避免使用*setter*，因为*setter*往往允许破坏对象状态的不变量。
 
-As well as reasoning about its correctness, arguing about your code gives you understanding of it. Communicate the insights you gain for everyone's benefit.
-
-By [Yechiel Kimchi](http://programmer.97things.oreilly.com/wiki/index.php/Yechiel_Kimchi)
+作者 [Yechiel Kimchi](http://programmer.97things.oreilly.com/wiki/index.php/Yechiel_Kimchi)
